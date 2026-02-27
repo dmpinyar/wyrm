@@ -1,5 +1,7 @@
 # wyrm
 
+GROUP MEMBERS: Devin Pinyard (dmpinyar), Kevin Alvarenga (kaalvare)
+
 README instructions then documentation:
 
 README:
