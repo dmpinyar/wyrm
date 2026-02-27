@@ -37,12 +37,13 @@ The program prioritizes finding all three glizzies before it finds one of the go
 
 
 Testing:
-All directional path costs are 1 for the sake of testing (kind of an unnecessary modification cause we desire 1 for everything, but whatever)
+All directional path costs are 1 unless otherwise specified
 
 (BFS)
 Start State: 32
 Hot Dogs: 62, 47, 82
 Goals: 34, 48, 49
+RESULTS
 Number of expanded states: 220
 Path length: 14
 Total Path Cost: 13
@@ -50,6 +51,7 @@ Total Path Cost: 13
 Start State: 179
 Hot Dogs: 62, 47, 82
 Goals: 34, 48, 49
+RESULTS
 Number of expanded states: 120
 Path length: 22
 Total Path Cost: 21
@@ -57,14 +59,31 @@ Total Path Cost: 21
 Start State: 143
 Hot Dogs: 62, 47, 82
 Goals: 144, 77, 32
+RESULTS
 Number of expanded states: 122
 Path length: 14
 Total Path Cost: 13
+
+Start State: 32
+Hot Dogs: 62, 47, 82
+Goals: 34, 48, 49
+North Arc Cost: 1
+South Arc Cost: 3
+East Arc Cost: 1
+West Arc Cost: 3
+RESULTS
+Number of expanded states: 220
+Path length: 14
+Total Path Cost: 25
+
+
+
 
 (UCS)
 Start State: 32
 Hot Dogs: 62, 47, 82
 Goals: 34, 48, 49
+RESULTS
 Number of expanded states: 220
 Path length: 14
 Total Path Cost: 13
@@ -72,6 +91,7 @@ Total Path Cost: 13
 Start State: 179
 Hot Dogs: 62, 47, 82
 Goals: 34, 48, 49
+RESULTS
 Number of expanded states: 120
 Path length: 22
 Total Path Cost: 21
@@ -79,10 +99,23 @@ Total Path Cost: 21
 Start State: 143
 Hot Dogs: 62, 47, 82
 Goals: 144, 77, 32
+RESULTS
 Number of expanded states: 122
 Path length: 14
 Total Path Cost: 13
 
+Start State: 32
+Hot Dogs: 62, 47, 82
+Goals: 34, 48, 49
+North Arc Cost: 1
+South Arc Cost: 3
+East Arc Cost: 1
+West Arc Cost: 3
+RESULTS
+Number of expanded states: 260
+Path length: 14
+Total Path Cost: 25
+
 
 Testing Reflection:
-Breadth First Search seemed to branch out more and be more spread out across the entire environment. One of the most noticeable differences between the performance of the two algorithms was in the first test, where UCS missed the last glizzy (right next to the start) and went on a wild goose chase throughout the rest of the apartment, but BFS was able to find it right away. I can infer that the closer the three hot dogs and tongs were to the start, the more likely it was that the algorithm felt the need to explore the whole apartment. BFS failed in that it found the hot dogs just after exploring all the tongs, so it looked elsewhere before checking back. UCS failed in that it didn’t find all of the hot dogs fast enough, and had to come back to them toward the end in this situation. A* would likely outperform both because of the general knowledge of where the hot dogs and tongs would be—it wouldn’t be checking poor locations for them even remotely to the same extent.
+Breadth First Search seemed to branch out more and be more spread out across the entire environment. One of the most noticeable differences between the performance of the two algorithms was in the first test, where UCS missed the last glizzy (right next to the start) and went on a wild goose chase throughout the rest of the apartment, but BFS was able to find it right away. I can infer that the closer the three hot dogs and tongs were to the start, the more likely it was that the algorithm felt the need to explore the whole apartment. BFS failed in that it found the hot dogs just after exploring all the tongs, so it looked elsewhere before checking back. UCS failed in that it didn’t find all of the hot dogs fast enough, and had to come back to them toward the end in this situation. A* would likely outperform both because of the general knowledge of where the hot dogs and tongs would be—it wouldn’t be checking poor locations for them even remotely to the same extent. When the directional costs differed, UCS took significantly longer to determine the optimal state than BFS. This is likely due to it not realizing sooner that the optimal path was right at the beginning of it and requires some ostensibly suboptimal decisions to be made.
