@@ -6,6 +6,12 @@ README instructions
 
 # CSC520 Assignment 1 – Part 2
 
+# Analysis/Report
+
+
+
+#README
+
 ## 1. How to Open and Run the SNAP Project
 1. Open the SNAP website
 2. Import the project file:
