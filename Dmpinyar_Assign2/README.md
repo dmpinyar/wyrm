@@ -13,7 +13,17 @@ One of my roommates, Jonathan, loves hot dogs. Unfortunately, far too often, he 
 ## Testing
 All directional path costs are 1 unless otherwise specified. We chose “three different starting states” for our testing. We included a fourth test case that uses different edge weights as an additional test for cost comparison. 
 
-### BFS
+### Breadth-First Search (BFS)
+We report edge weight costs for BFS to show a comparison in solution cost with UCS, even though BFS doesn’t use the edge weights. BFS uses a FIFO (queue) approach. 
+
+| Test Case | Expanded States | Path Length | Total Path Cost |
+|------------|----------------|-------------|-----------------|
+| Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 220 | 14 | 13 |
+| Start: 179<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 120 | 22 | 21 |
+| Start: 143<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 120 | 14 | 13 |
+| Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49<br>North: 10, South: 1, East: 10, West: 1 | 220 | 14 | 76 |
+
+
 
 
 # README
