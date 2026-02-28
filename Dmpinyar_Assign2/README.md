@@ -18,7 +18,7 @@ We report edge weight costs for BFS to show a comparison in solution cost with U
 | Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 220 | 14 | 13 |
 | Start: 179<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 120 | 22 | 21 |
 | Start: 143<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 120 | 14 | 13 |
-| Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49<br>North: 10, South: 1, East: 10, West: 1 | 220 | 14 | 76 |
+| Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49<br>North Arc Cost: 10, South Arc Cost: 1, East Arc Cost: 10, West Arc Cost: 1 | 220 | 14 | 76 |
 
 
 ### Uniform Cost Search (UCS)
@@ -30,7 +30,7 @@ UCS was implemented using a priority queue to optimize accumulated costs, `g(n)`
 | Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 220 | 14 | 13 |
 | Start: 179<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 120 | 22 | 21 |
 | Start: 143<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49 | 120 | 14 | 13 |
-| Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49<br>North: 10, South: 1, East: 10, West: 1 | 222 | 14 | 76 |
+| Start: 32<br>Hot Dogs: 62, 47, 82<br>Goals: 34, 48, 49<br>North Arc Cost: 10, South Arc Cost: 1, East Arc Cost: 10, West Arc Cost: 1 | 222 | 14 | 76 |
 
 ### Testing Reflection / Analysis
 Across the first three test cases, where all directional edge costs were equal to 1, BFS and UCS gave identical solution paths, lengths, and total path costs. This was expected since when all edge costs are uniform, minimizing the number of actions (BFS) would be the same as minimizing accumulated cost,`g(n)`, which is UCS. Therefore, both algorithms expanded the same number of states here, showing that UCS can be the same as BFS under the constraint of uniform edge costs. However, we did notice some differences in the weighted test case (case 4), where North and East directions had an edge cost of 10, and South and West had an edge cost of 1. Both algorithms gave the same solution path and total cost, which means that for our current graph design, the lowest cost solution also happened to be the same as the shortest-step solution. This is mostly due to the walls and layout of our graph restricting certain areas and the placement of the hot dogs and tongs (goals). While both algorithms did provide the same solution, UCS expanded slightly more states, 222, while BFS expanded 220. This reflects the additional steps required by UCS to prioritize by cumulative cost and optimize path cost. On the otherhand, BFS just focused on the order of depth and doesn’t take into account the edge weights for its search order. 
