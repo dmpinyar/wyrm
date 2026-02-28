@@ -2,15 +2,20 @@
 
 GROUP MEMBERS: Devin Pinyard (dmpinyar), Kevin Alvarenga (kaalvare)
 
-README instructions
 
 # CSC520 Assignment 1 – Part 2
 
 # Analysis/Report
+## Scenario
+One of my roommates, Jonathan, loves hot dogs. Unfortunately, far too often, he misplaces his hot dogs somewhere in the apartment. Now, Jonathan managed to lose his hot dogs again, and he needs to find them. Now, he only needs one pack of hot dogs, but somehow he’s managed to lose his entire supply of three hot dogs! Further, he seems to have lost his tongs! He needs to find all of his hot dogs, and then one of his pairs of tongs afterward (after all, he can’t pick up the hot dogs if he has tongs in his hands)! They seem to have been lost in some especially dark corner of the apartment this time. Jonathan cannot find them on his own using his antediluvian searching techniques, so we must help Jonathan find them by communicating a traditional searching algorithm to him by yelling at him from across the apartment. Hopefully, Jonny will be able to prepare his hot dogs with our help.
+
+## Testing
+All directional path costs are 1 unless otherwise specified. We chose “three different starting states” for our testing. We included a fourth test case that uses different edge weights as an additional test for cost comparison. 
+
+### BFS
 
 
-
-#README
+# README
 
 ## 1. How to Open and Run the SNAP Project
 1. Open the SNAP website
